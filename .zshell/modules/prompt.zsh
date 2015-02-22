@@ -1,4 +1,4 @@
-function prompt_precmd {
+function __prompt_precmd {
   # Check for untracked files or updated submodules since vcs_info does not.
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
     branch_format="(${_prompt_colors[1]}%b%f%u%c${_prompt_colors[4]}●%f)"
@@ -11,17 +11,17 @@ function prompt_precmd {
   vcs_info 'prompt'
 }
 
-function virtual_env {
+function __virtual_env {
   psvar[1]=''
   [ $VIRTUAL_ENV ] && psvar[1]=${VIRTUAL_ENV##*/}
 }
 
-function ssh {
+function __ssh {
   psvar[2]=''
   [ $SSH_CONNECTION ] && psvar[2]="%n@%m"
 }
 
-function ruby_env {
+function __ruby_env {
   psvar[3]=''
   if (( $+commands[rvm-prompt] )); then
     psvar[3]="$(rvm-prompt)"
@@ -32,15 +32,16 @@ function ruby_env {
   fi
 }
 
-function prompt_setup {
+function __prompt_setup {
   # Load required functions.
   autoload -Uz vcs_info
 
   # Add hook for calling vcs_info before each command.
   autoload -Uz add-zsh-hook
-  add-zsh-hook precmd prompt_precmd
-  add-zsh-hook precmd virtual_env
-  add-zsh-hook precmd ruby_env
+  add-zsh-hook precmd __prompt_precmd
+  add-zsh-hook precmd __virtual_env
+  add-zsh-hook precmd __ssh
+  add-zsh-hook precmd __ruby_env
 
   # Use extended color pallete if available.
   if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
@@ -94,4 +95,4 @@ function prompt_setup {
   SPROMPT="Correct %F{red}%R%f to %F{green}%r%f [(y)es (n)o (a)bort (e)dit]? "
 }
 
-prompt_setup "$@"
+__prompt_setup "$@"
