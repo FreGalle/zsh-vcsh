@@ -1,7 +1,7 @@
 # Load and initialize the completion system ignoring insecure directories.
 autoload -Uz compinit && compinit -i
 zmodload -i zsh/complist
-autoload -U colors && colors 
+autoload -U colors && colors
 
 # Use caching to make completion for commands such as dpkg and apt usable.
 zstyle ':completion::complete:*' use-cache on
