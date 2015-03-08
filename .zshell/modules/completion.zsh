@@ -92,6 +92,9 @@ zstyle ':completion:*:*:kill:*' insert-ids single
 zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:manuals.(^1*)' insert-sections true
 
+# Vim
+zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.class' '*.o'
+
 # Media Players
 zstyle ':completion:*:*:mpg123:*' file-patterns '*.(mp3|MP3):mp3\ files *(-/):directories'
 zstyle ':completion:*:*:mpg321:*' file-patterns '*.(mp3|MP3):mp3\ files *(-/):directories'
