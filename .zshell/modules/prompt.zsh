@@ -41,7 +41,6 @@ function __prompt_setup {
   add-zsh-hook precmd __prompt_precmd
   add-zsh-hook precmd __virtual_env
   add-zsh-hook precmd __ssh
-  add-zsh-hook precmd __ruby_env
 
   # Use extended color pallete if available.
   if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
@@ -88,10 +87,9 @@ function __prompt_setup {
   local returnval="%(?.%{%F{green}%}➜ .%{%F{red}%}➜ )"
   local virtual_env="%(1V.(%1v).)"
   local ssh="%(2V.%{%F{red}%}%wv.)"
-  local ruby="%(3V.(%3v).)"
 
   PROMPT="${returnval} ${ssh}%{%F{blue}%}%~%f %# "
-  RPROMPT='${vcs_info_msg_0_}'"${virtual_env}${ruby}"
+  RPROMPT='${vcs_info_msg_0_}'"${virtual_env}"
   SPROMPT="Correct %F{red}%R%f to %F{green}%r%f [(y)es (n)o (a)bort (e)dit]? "
 }
 
