@@ -23,4 +23,5 @@ typeset -U path
 path=(
   $path
   $HOME/.rvm/bin(N)
+  $HOME/.cabal/bin
 )
