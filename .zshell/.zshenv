@@ -27,4 +27,5 @@ path=(
   $HOME/.local/bin(N)
   $HOME/.rvm/bin(N)
   $HOME/.cabal/bin(N)
+  $HOME/Library/Android/sdk/platform-tools(N)
 )
