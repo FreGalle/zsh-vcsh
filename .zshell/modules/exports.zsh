@@ -6,10 +6,6 @@ if (( $+commands[virtualenv] )); then
   export VIRTUAL_ENV_DISABLE_PROMPT=1 # Don't display prompt
 fi
 
-fpath=(
-  /usr/local/share/zsh-completions(N)
-  $fpath
-)
 
 #
 # Enable some coloring
