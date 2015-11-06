@@ -14,6 +14,11 @@ if (( $+commands[virtualenv] )); then
   export VIRTUAL_ENV_DISABLE_PROMPT=1 # Don't display prompt
 fi
 
+#
+# Added when installing go
+if (( $+commands[go] )); then
+  export GOPATH=~/Projects/go
+fi
 
 #
 # Enable some coloring
