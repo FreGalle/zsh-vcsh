@@ -75,3 +75,12 @@ fi
 if (( $+commands[curl] )); then
   alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
 fi
+
+#
+# Docker aliases
+#
+
+if (( $+commands[docker] )); then
+  alias dockrm='docker rm -v $(docker ps -aq -f status=exited)'
+fi
+
