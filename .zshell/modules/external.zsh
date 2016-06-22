@@ -1,18 +1,18 @@
 # Zshell completions installed with homebrew
 fpath=(
-  $HOME/.homebrew/share/zsh-completions(N)
+  /usr/local/share/zsh-completions(N)
   $fpath
 )
 
 # Syntax highlighting
-if [ -d $HOME/.homebrew/share/zsh-syntax-highlighting ]; then
-  source $HOME/.homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -d /usr/local/share/zsh-syntax-highlighting ]; then
+  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor root)
 fi
 
 # History substring search
-if [ -d $HOME/.homebrew/opt/zsh-history-substring-search ]; then
-  source $HOME/.homebrew/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+if [ -d /usr/local/opt/zsh-history-substring-search ]; then
+  source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
 
   # bind keys
   zmodload zsh/terminfo

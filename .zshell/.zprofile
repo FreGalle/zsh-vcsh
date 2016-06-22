@@ -5,7 +5,7 @@
 #
 # Added when installing go
 #
-GOPATH=~/Projects/go
+export GOPATH=~/Projects/go
 
 # Additional path entries
 #
@@ -17,8 +17,7 @@ path=(
   $GOPATH/bin(N)
   $HOME/.rbenv/bin
   $HOME/.cabal/bin(N)
-  $HOME/.homebrew/opt/go/libexec/bin(N)
-  $HOME/.homebrew/bin(N)
+  /usr/local/opt/go/libexec/bin(N)
   $path
 )
 
