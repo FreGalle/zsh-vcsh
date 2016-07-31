@@ -1,5 +1,5 @@
-# Load and initialize the completion system ignoring insecure directories.
-autoload -Uz compinit && compinit -i
+# Load and initialize the completion system using insecure directories.
+autoload -Uz compinit && compinit -u
 zmodload -i zsh/complist
 autoload -U colors && colors
 
