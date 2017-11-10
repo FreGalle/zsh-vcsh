@@ -15,3 +15,5 @@ source ${ZDOTDIR:-$HOME}/modules/functions.zsh
 source ${ZDOTDIR:-$HOME}/modules/history.zsh
 source ${ZDOTDIR:-$HOME}/modules/other.zsh
 source ${ZDOTDIR:-$HOME}/modules/external.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

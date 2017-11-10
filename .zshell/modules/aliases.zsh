@@ -17,7 +17,12 @@ hash -d P=~/Projects
 # Global aliases
 #
 
-alias -g L="|less"
+alias -g   L="|& less"
+alias -g   G="| grep -a --line-buffered"
+alias -g JQL="| jq -C '.' | less -R"
+alias -g   S="| sed -l 's/^[^{]*//'"
+alias -g   T="| tail"
+alias -g   H="| head"
 
 #
 # Resource Usage

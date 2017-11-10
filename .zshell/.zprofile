@@ -18,6 +18,7 @@ path=(
   $HOME/.rbenv/bin
   $HOME/.cabal/bin(N)
   /usr/local/opt/go/libexec/bin(N)
+  $(yarn global bin)
   $path
 )
 

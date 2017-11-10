@@ -30,3 +30,11 @@ if [ -d /usr/local/opt/zsh-history-substring-search ]; then
   export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='underline,fg=red,bold'
   export HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS='i'
 fi
+
+# FZF support
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+
+  export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!.git/*"'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+fi

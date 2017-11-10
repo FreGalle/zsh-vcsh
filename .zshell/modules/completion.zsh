@@ -115,3 +115,20 @@ zstyle ':completion:*:ssh:*' group-order users hosts-domain hosts-host users hos
 zstyle ':completion:*:(ssh|scp|ftp|rsync):*:hosts-host' ignored-patterns '*(.|:)*' loopback ip6-loopback localhost ip6-localhost broadcasthost
 zstyle ':completion:*:(ssh|scp|ftp|rsync):*:hosts-domain' ignored-patterns '<->.<->.<->.<->' '^[-[:alnum:]]##(.[-[:alnum:]]##)##' '*@*'
 zstyle ':completion:*:(ssh|scp|ftp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.0.<->' '255.255.255.255' '::1' 'fe80::*'
+
+# completion for "man" by Gossamer <gossamer@tertius.net.au> 980827
+compctl -f -x 'S[1][2][3][4][5][6][7][8][9]' -k '(1 2 3 4 5 6 7 8 9)' \
+  - 'R[[1-9nlo]|[1-9](|[a-z]),^*]' -K 'match-man' \
+  - 's[-M],c[-1,-M]' -g '*(-/)' \
+  - 's[-P],c[-1,-P]' -c \
+  - 's[-S],s[-1,-S]' -k '( )' \
+  - 's[-]' -k '(a d f h k t M P)' \
+  - 'p[1,-1]' -c + -K 'match-man' \
+  -- vman pinfo
+
+# source http://strcat.de/dotfiles
+# gzip files, but gzip -d only gzipped or compressed files
+compctl -x 'R[-*[dt],^*]' -g '*.(gz|z|Z|t[agp]z|tarZ|tz)(D)' + -g '*(-/D)' + -f -  's[]' -g '^*(.(tz|gz|t[agp]z|tarZ|zip|ZIP|jpg|JPG|gif|GIF|[zZ])|[~#])' + -f -- gzip
+# kill takes signal names as the first argument after -, but job names after %
+compctl -j -P % -x 's[-] p[1]' -k signals -- kill
+compctl -j -P '%' fg jobs disown

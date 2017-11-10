@@ -2,6 +2,13 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
+if (( $+commands[nvim] )); then
+  export EDITOR='nvim'
+  export VISUAL='nvim'
+fi
+
+export KEYTIMEOUT=1
+
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
 fi
