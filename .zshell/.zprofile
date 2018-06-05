@@ -2,10 +2,7 @@
 # Run for login shells before .zshrc
 #
 
-#
-# Added when installing go
-#
-export GOPATH=~/Projects/go
+export GOPATH=~/go
 
 # Additional path entries
 #
@@ -18,9 +15,7 @@ path=(
   $HOME/.rbenv/bin
   $HOME/.cabal/bin(N)
   /usr/local/opt/go/libexec/bin(N)
-  $(yarn global bin)
   $path
 )
 
 export PATH
-

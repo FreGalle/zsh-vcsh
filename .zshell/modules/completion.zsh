@@ -129,6 +129,6 @@ compctl -f -x 'S[1][2][3][4][5][6][7][8][9]' -k '(1 2 3 4 5 6 7 8 9)' \
 # source http://strcat.de/dotfiles
 # gzip files, but gzip -d only gzipped or compressed files
 compctl -x 'R[-*[dt],^*]' -g '*.(gz|z|Z|t[agp]z|tarZ|tz)(D)' + -g '*(-/D)' + -f -  's[]' -g '^*(.(tz|gz|t[agp]z|tarZ|zip|ZIP|jpg|JPG|gif|GIF|[zZ])|[~#])' + -f -- gzip
+compctl -j -P '%' fg jobs disown
 # kill takes signal names as the first argument after -, but job names after %
 compctl -j -P % -x 's[-] p[1]' -k signals -- kill
-compctl -j -P '%' fg jobs disown

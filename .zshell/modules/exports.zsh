@@ -14,19 +14,11 @@ if [[ -z "$LANG" ]]; then
 fi
 
 #
-# Added when installing go
-#
-
-if (( $+commands[go] )); then
-    export GOPATH
-fi
-
-#
-# Added when installing virtualenv
+# added when installing virtualenv
 #
 
 if (( $+commands[virtualenv] )); then
-  export VIRTUAL_ENV_DISABLE_PROMPT=1 # Don't display prompt
+  export virtual_env_disable_prompt=1 # don't display prompt
 fi
 
 #
@@ -35,8 +27,7 @@ fi
 
 export GREP_COLOR='37;45'
 export GREP_OPTIONS='--color=auto'
-
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
+# export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
 
 #
 # Enable coloring for less and man
@@ -59,12 +50,6 @@ export LESS_TERMCAP_us=$'\E[01;32m'    # Begins underline
 # Remove -X and -F (exit if the content fits on one screen) to enable it.
 export LESS='-F -g -i -M -R -S -w -X -z-4'
 export LESSHISTFILE=/dev/null
-
-#
-# Prettify ri-output. Terminal should support ansi-escaped chars
-#
-
-export RI="--format ansi --width 80"
 
 #
 # Treat these characters as part of a word

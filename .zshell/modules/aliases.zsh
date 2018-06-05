@@ -11,8 +11,6 @@ alias llh='ls -lh -d .*'
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
-hash -d P=~/Projects
-
 #
 # Global aliases
 #

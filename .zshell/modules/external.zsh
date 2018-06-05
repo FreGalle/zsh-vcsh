@@ -38,3 +38,9 @@ if [ -f ~/.fzf.zsh ]; then
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!.git/*"'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
+
+# iterm2 shell integration
+local iterm2=${ZDOTDIR:-$HOME}/modules/iterm2.zsh
+if [ -f $iterm2 ]; then
+  source $iterm2
+fi

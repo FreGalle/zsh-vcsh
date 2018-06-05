@@ -88,7 +88,8 @@ function __prompt_setup {
   local virtual_env="%(1V.(%1v).)"
   local ssh="%(2V.%{%F{red}%}%wv.)"
 
-  PROMPT="${returnval} ${ssh}%{%F{blue}%}%~%f %# "
+  #PROMPT="${returnval} ${ssh}%{%F{blue}%}%~%f %# "
+  PROMPT=" ${ssh}%{%F{blue}%}%~%f %# "
   RPROMPT='${vcs_info_msg_0_}'"${virtual_env}"
   SPROMPT="Correct %F{red}%R%f to %F{green}%r%f [(y)es (n)o (a)bort (e)dit]? "
 }
