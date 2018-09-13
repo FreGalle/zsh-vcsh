@@ -15,6 +15,7 @@ path=(
   $HOME/.rbenv/bin
   $HOME/.cabal/bin(N)
   /usr/local/opt/go/libexec/bin(N)
+  $GOPATH/src/github.com/piesync/toolbelt(N)
   $path
 )
 
