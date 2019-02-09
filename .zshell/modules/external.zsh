@@ -4,15 +4,16 @@ fpath=(
   $fpath
 )
 
-# Syntax highlighting
-if [ -d /usr/local/share/zsh-syntax-highlighting ]; then
-  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor root)
+# Auto suggestions
+if [ -d /usr/local/share/zsh-autosuggestions ]; then
+  source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # History substring search
-if [ -d /usr/local/opt/zsh-history-substring-search ]; then
-  source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+#
+# Alternative for prefix-only context-sensitive search: https://unix.stackexchange.com/a/97844
+if [ -d /usr/local/share/zsh-history-substring-search ]; then
+  source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
   # bind keys
   zmodload zsh/terminfo
