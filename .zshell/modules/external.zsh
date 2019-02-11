@@ -39,3 +39,11 @@ if [ -f ~/.fzf.zsh ]; then
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!.git/*"'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
+
+# Mac Terminal.app directory reporting
+update_terminal_cwd() {
+  printf '\e]7;%s\a' "file://$HOSTNAME$PWD"
+}
+
+chpwd_functions=(update_terminal_cwd)
+update_terminal_cwd
