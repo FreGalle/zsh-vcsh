@@ -10,3 +10,14 @@ zle -N self-insert url-quote-magic
 #
 
 autoload -U zmv
+
+#
+# Edit command line
+#
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+
+bindkey -M emacs '^XE' edit-command-line
+bindkey -M emacs '^X^E' edit-command-line
+bindkey -M vicmd 'v' edit-command-line
