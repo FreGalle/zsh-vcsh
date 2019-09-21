@@ -14,6 +14,7 @@ path=(
   $GOPATH/bin(N)
   $HOME/.rbenv/bin
   $HOME/.cabal/bin(N)
+  `python3 -m site --user-base`/bin(N)
   /usr/local/opt/go/libexec/bin(N)
   $GOPATH/src/github.com/piesync/toolbelt(N)
   $path
