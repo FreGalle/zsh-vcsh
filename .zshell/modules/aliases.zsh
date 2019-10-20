@@ -1,5 +1,5 @@
 #
-# Directory movement
+# File information
 #
 
 alias ls='ls -G'
@@ -7,6 +7,18 @@ alias ll='ls -lFh'
 alias lr='ll -R'
 alias lh='ls -d .*'
 alias llh='ls -lh -d .*'
+
+if (( $+commands[exa] )); then
+  alias ls=exa
+fi
+
+if (( $+commands[bat] )); then
+  alias cat=bat
+fi
+
+#
+# Directory movement
+#
 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
