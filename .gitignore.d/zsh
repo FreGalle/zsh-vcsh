@@ -1,0 +1,12 @@
+*
+!/.zshell
+!/.zshell/.zlogin
+!/.zshell/.zlogout
+!/.zshell/.zprofile
+!/.zshell/.zshenv
+!/.zshell/.zshrc
+!/.zshell/modules
+!/.zshell/modules/**
+!/.zshenv
+!/.gitignore.d
+!/.gitignore.d/zsh
