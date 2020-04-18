@@ -1,4 +1,5 @@
 # Zshell completions installed with homebrew
+typeset -U fpath
 fpath=(
   /usr/local/share/zsh-completions(N)
   $fpath
