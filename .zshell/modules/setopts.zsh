@@ -17,7 +17,7 @@ unsetopt CDABLE_VARS        # Change directory to a path stored in a variable.
 setopt ALWAYS_TO_END        # Move cursor to the end of a completed word.
 setopt AUTO_LIST            # Automatically list coices on ambiguous completion. <D>
 setopt AUTO_MENU            # Show completion menu on a succesive tab press. <D>
-setopt AUTO_NAME_DIRS       # Auto add variable-stored paths to ~ list.
+# setopt AUTO_NAME_DIRS       # Auto add variable-stored paths to ~ list.
 setopt AUTO_PARAM_SLASH     # On directory completion, add a trailing slash. <D>
 setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
 unsetopt MENU_COMPLETE      # Do not autoselect the first completion entry
