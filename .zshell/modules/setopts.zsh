@@ -8,7 +8,7 @@ setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
 setopt PUSHD_MINUS          # Swap meaning of cd +1 and cd -1
 setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
 setopt PUSHD_TO_HOME        # Push to home directory when no argument is given.
-setopt CDABLE_VARS          # Change directory to a path stored in a variable.
+unsetopt CDABLE_VARS        # Change directory to a path stored in a variable.
 
 #
 # Completion options
