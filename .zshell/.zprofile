@@ -21,3 +21,11 @@ path=(
 )
 
 export PATH
+
+typeset -U cdpath
+cdpath=(
+	$HOME/piesync(N)
+	$GOPATH/src/github.com/piesync(N)
+)
+
+export CDPATH
