@@ -16,4 +16,8 @@ source ${ZDOTDIR:-$HOME}/modules/history.zsh
 source ${ZDOTDIR:-$HOME}/modules/other.zsh
 source ${ZDOTDIR:-$HOME}/modules/external.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -d ${ZDOTDIR:-$HOME}/commands ];then
+	for f in ${ZDOTDIR:-$HOME}/commands/*.zsh; do
+		source $f
+	done
+fi
