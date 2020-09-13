@@ -44,11 +44,6 @@ if [ -f ~/.fzf.zsh ]; then
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
-# iTerm 2 Shell Integration
-if [ -e ~/.iterm2_shell_integration.zsh ]; then
-	source ~/.iterm2_shell_integration.zsh
-fi
-
 # Mac Terminal.app directory reporting
 update_terminal_cwd() {
   printf '\e]7;%s\a' "file://$HOSTNAME$PWD"
