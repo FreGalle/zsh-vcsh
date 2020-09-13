@@ -20,7 +20,7 @@ fi
 # Directory movement
 #
 
-alias d='dirs -v'
+alias dirs='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 #
@@ -33,6 +33,7 @@ alias -g JQL="| jq -C '.' | less -R"
 alias -g   S="| sed -l 's/^[^{]*//'"
 alias -g   T="| tail"
 alias -g   H="| head"
+alias -g PLQ="| pie-prod pie-log-query"
 
 #
 # Resource Usage
@@ -48,6 +49,7 @@ alias du='du -kh'
 
 if (( $+commands[git] )); then
   alias g='git'
+  alias glg="git log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr)%Creset%C(auto)%d%Creset %C(dim white)%an%Creset'"
 fi
 
 #
@@ -96,6 +98,12 @@ fi
 #
 
 if (( $+commands[docker] )); then
-  alias dockrm='docker rm -v $(docker ps -aq -f status=exited)'
+  alias d='docker'
+  alias drm='docker rm -v $(docker ps -aq -f status=exited)'
+
+  alias dc='docker-compose'
 fi
 
+if (( $+commands[exa] )); then
+	alias tree='exa -T'
+fi
