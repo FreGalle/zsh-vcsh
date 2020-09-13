@@ -44,6 +44,11 @@ if [ -f ~/.fzf.zsh ]; then
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
+# Added by Nix installer
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then 
+	source ~/.nix-profile/etc/profile.d/nix.sh; 
+fi
+
 # Mac Terminal.app directory reporting
 update_terminal_cwd() {
   printf '\e]7;%s\a' "file://$HOSTNAME$PWD"
