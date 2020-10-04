@@ -104,6 +104,11 @@ if (( $+commands[docker] )); then
   alias dc='docker-compose'
 fi
 
+if [ "$TERM" = 'xterm-kitty' ]; then
+  alias hg='kitty +kitten hyperlinked_grep'
+  compdef _rg kitty +kitten hyperlinked_grep
+fi
+
 if (( $+commands[exa] )); then
 	alias tree='exa -T'
 fi
