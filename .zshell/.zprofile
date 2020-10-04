@@ -8,7 +8,7 @@ export GOPATH=~/go
 #
 # The (N) glob qualifier only adds those elements to the path if they exist
 #
-typeset -U path
+typeset -Ux path
 path=(
   $HOME/.local/bin(N)
   $GOPATH/bin(N)
@@ -20,12 +20,8 @@ path=(
   $path
 )
 
-export PATH
-
-typeset -U cdpath
+typeset -Ux cdpath
 cdpath=(
 	$HOME/piesync(N)
 	$GOPATH/src/github.com/piesync(N)
 )
-
-export CDPATH
