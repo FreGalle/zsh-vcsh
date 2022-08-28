@@ -44,6 +44,11 @@ if [ -f ~/.fzf.zsh ]; then
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
+# Base Git branch reviews off of master by default
+if (( $+commands[git] )); then
+	export REVIEW_BASE=master
+fi
+
 # Added by Nix installer
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then 
 	source ~/.nix-profile/etc/profile.d/nix.sh; 
