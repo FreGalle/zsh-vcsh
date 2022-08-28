@@ -111,3 +111,15 @@ fi
 if (( $+commands[exa] )); then
 	alias tree='exa -T'
 fi
+
+if (( $+commands[ngrep] )); then
+    alias ng='ngrep -tqW byline -d any'
+fi
+
+if (( $+commands[gron] )); then
+	alias ungron="gron --ungron"
+fi
+
+if (( $+commands[osascript] ));then
+	alias -g ding="osascript -e 'display notification \"Done!\" sound name \"glass\"' || osascript -e 'display notification \"Error!\" sound name \"basso\"'"
+fi
