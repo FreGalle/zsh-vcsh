@@ -7,6 +7,10 @@ if (( $+commands[nvim] )); then
   export VISUAL='nvim'
 fi
 
+if (( $+commands[brew] )); then
+  export HOMEBREW_AUTO_UPDATE_SECS=$(( 60*60*24 ))
+fi
+
 export KEYTIMEOUT=1
 
 if [[ -z "$LANG" ]]; then
