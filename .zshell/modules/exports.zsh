@@ -62,7 +62,9 @@ export LESSHISTFILE=/dev/null
 export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
 #
-# Standard cache location used by some programs
+# Standard cache/config/data locations used by some programs
 #
 
 export XDG_CACHE_HOME="$HOME/Library/Caches"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
