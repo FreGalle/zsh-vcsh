@@ -105,6 +105,7 @@ if (( $+commands[docker] )); then
 fi
 
 if [ "$TERM" = 'xterm-kitty' ]; then
+  alias ssh="kitty +kitten ssh"
 fi
 
 if (( $+commands[exa] )); then
