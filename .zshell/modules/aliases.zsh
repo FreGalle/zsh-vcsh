@@ -101,7 +101,7 @@ if (( $+commands[docker] )); then
   alias d='docker'
   alias drm='docker rm -v $(docker ps -aq -f status=exited)'
 
-  alias dc='docker-compose'
+  alias dc='docker compose'
 fi
 
 if [ "$TERM" = 'xterm-kitty' ]; then
