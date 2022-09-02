@@ -5,6 +5,8 @@
 !/.zshell/.zprofile
 !/.zshell/.zshenv
 !/.zshell/.zshrc
+!/.zshell/commands
+!/.zshell/commands/**
 !/.zshell/modules
 !/.zshell/modules/**
 !/.zshenv
