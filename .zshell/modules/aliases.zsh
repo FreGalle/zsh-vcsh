@@ -2,15 +2,16 @@
 # File information
 #
 
-alias ls='ls -G'
-alias ll='ls -lFh'
-alias lr='ll -R'
-alias lh='ls -d .*'
-alias llh='ls -lh -d .*'
-
-if (( $+commands[exa] )); then
-  alias ls=exa
+if (( $+commands[lsd] )); then
+  alias ls='lsd --group-directories-first --hyperlink=auto'
 fi
+
+alias la='ls -a'
+alias ll='ls -l'
+alias lr='ls -R'
+alias lt='ls --tree'
+alias lla='ll -a'
+alias llr='ll -R'
 
 if (( $+commands[bat] )); then
   alias cat=bat
