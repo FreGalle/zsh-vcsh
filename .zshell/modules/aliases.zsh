@@ -119,3 +119,8 @@ fi
 if (( $+commands[osascript] ));then
 	alias -g ding="osascript -e 'display notification \"Done!\" sound name \"glass\"' || osascript -e 'display notification \"Error!\" sound name \"basso\"'"
 fi
+
+if (( $+commands[rg] )); then
+	alias rg="rg --sort=path --color=auto --hyperlink-format=kitty"
+	alias rgfiles="rg --files-with-matches"
+fi
