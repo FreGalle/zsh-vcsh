@@ -108,10 +108,6 @@ if [ "$TERM" = 'xterm-kitty' ]; then
   alias ssh="kitty +kitten ssh"
 fi
 
-if (( $+commands[exa] )); then
-	alias tree='exa -T'
-fi
-
 if (( $+commands[ngrep] )); then
     alias ng='ngrep -tqW byline -d any'
 fi
