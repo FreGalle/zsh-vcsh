@@ -17,12 +17,11 @@ path=(
   $HOME/.rd/bin(N)
   `python3 -m site --user-base`/bin(N)
   /usr/local/opt/go/libexec/bin(N)
-  $GOPATH/src/github.com/piesync/toolbelt(N)
+  $HOME/src/sync-toolbelt(N)
   $path
 )
 
 typeset -Ux cdpath
 cdpath=(
-	$HOME/piesync(N)
-	$GOPATH/src/github.com/piesync(N)
+	$HOME/src(N)
 )
