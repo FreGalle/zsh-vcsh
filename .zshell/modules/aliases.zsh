@@ -34,7 +34,6 @@ alias -g JQL="| jq -C '.' | less -R"
 alias -g   S="| sed -l 's/^[^{]*//'"
 alias -g   T="| tail"
 alias -g   H="| head"
-alias -g PLQ="| pie-prod pie-log-query"
 
 #
 # Resource Usage
