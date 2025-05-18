@@ -1,13 +1,13 @@
 # Zshell completions installed with homebrew
 typeset -U fpath
 fpath=(
-  /usr/local/share/zsh-completions(N)
+  /opt/homebrew/share/zsh-completions(N)
   $fpath
 )
 
 # Auto suggestions
-if [ -d /usr/local/share/zsh-autosuggestions ]; then
-  source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -d /opt/homebrew/share/zsh-autosuggestions ]; then
+  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
   # Set colors
   export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=yellow,bold,underline"
@@ -16,8 +16,8 @@ fi
 # History substring search
 #
 # Alternative for prefix-only context-sensitive search: https://unix.stackexchange.com/a/97844
-if [ -d /usr/local/share/zsh-history-substring-search ]; then
-  source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+if [ -d /opt/homebrew/share/zsh-history-substring-search ]; then
+  source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
   # bind keys
   zmodload zsh/terminfo
