@@ -2,14 +2,14 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
-if (( $+commands[nvim] )); then
-  export EDITOR='nvim'
-  export VISUAL='nvim'
-fi
-
 if (( $+commands[brew] )); then
   eval "$(brew shellenv)"
   export HOMEBREW_AUTO_UPDATE_SECS=$(( 60*60*24 ))
+fi
+
+if (( $+commands[nvim] )); then
+  export EDITOR='nvim'
+  export VISUAL='nvim'
 fi
 
 export KEYTIMEOUT=1
