@@ -11,6 +11,7 @@ export GOPATH=~/go
 typeset -Ux path
 path=(
   $HOME/.local/bin(N)
+  /opt/homebrew/bin(N)
   $GOPATH/bin(N)
   $HOME/.rbenv/bin
   $HOME/.cabal/bin(N)
