@@ -122,5 +122,6 @@ fi
 
 if (( $+commands[rg] )); then
 	alias rg="rg --sort=path --color=auto --hyperlink-format=kitty"
+	alias rgf="rg --files-with-matches"
 	alias rgfiles="rg --files-with-matches"
 fi
