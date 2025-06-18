@@ -16,11 +16,15 @@ function repo() {
 	done
   fi
 
-  if [ "$TERM" = "xterm-kitty" ]; then
-	  kitten @ set-tab-title $1
-  fi
+  if [ ! -d "$CODE_DIR/$1" ]; then
+	popd
+  else
+	cd $CODE_DIR/$1
 
-  cd $CODE_DIR/$1
+	if [ "$TERM" = "xterm-kitty" ]; then
+		kitten @ set-tab-title $1
+	fi
+  fi
 }
 
 compctl -M 'm:{a-z}={A-Z}' -K _repo_comp repo
