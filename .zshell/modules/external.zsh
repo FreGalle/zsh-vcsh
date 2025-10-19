@@ -37,12 +37,10 @@ if [ -d /opt/homebrew/share/zsh-history-substring-search ]; then
 fi
 
 # FZF support
-#
-# Complete fzf installation using $(brew --prefix)/opt/fzf/install --xdg --no-bash --no-fish
 
-if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ]; then
-  source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
-
+if (( $+commands[fzf] )); then
+  # Set up fzf key bindings and fuzzy completion
+  source <(fzf --zsh)
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!.git/*"'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
