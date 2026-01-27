@@ -10,6 +10,11 @@ if [ -d /opt/homebrew/share/zsh-autosuggestions ]; then
   source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
+# Syntax/Command highlighting
+if [ -d /opt/homebrew/share/zsh-syntax-highlighting ]; then
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
 # History substring search
 #
 # Alternative for prefix-only context-sensitive search: https://unix.stackexchange.com/a/97844
