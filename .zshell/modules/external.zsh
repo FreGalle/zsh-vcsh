@@ -8,9 +8,6 @@ fpath=(
 # Auto suggestions
 if [ -d /opt/homebrew/share/zsh-autosuggestions ]; then
   source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-  # Set colors
-  export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=yellow,bold,underline"
 fi
 
 # History substring search
