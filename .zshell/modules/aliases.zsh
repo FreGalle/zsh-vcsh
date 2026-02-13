@@ -42,6 +42,10 @@ alias -g   H="| head"
 alias df='df -kh'
 alias du='du -kh'
 
+if (( $+commands[btop] )); then
+  alias top=btop
+fi
+
 #
 # Git aliases
 # For more see ~/.gitconfig
