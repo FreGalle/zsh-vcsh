@@ -129,3 +129,11 @@ if (( $+commands[rg] )); then
 	alias rgf="rg --files-with-matches"
 	alias rgfiles="rg --files-with-matches"
 fi
+
+#
+# GH aliases
+#
+
+if (( $+commands[gh] )); then
+	alias ghw='TERM=xterm-256color watch --color -n 60 --no-title '\''CLICOLOR_FORCE=1 gh pr status'\'''
+fi
