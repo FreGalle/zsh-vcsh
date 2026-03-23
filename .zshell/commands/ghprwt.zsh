@@ -12,6 +12,16 @@ function ghprwt() {
   local branch dirname
   branch=$(gh pr view "$pr" --json headRefName -q .headRefName) || return
   dirname="pr-${pr}-${branch//\//_}"
+
+  if [[ -d "../$dirname" ]]; then
+    cd "../$dirname" || return
+    git fetch "$remote" "$branch" || return
+    git switch "$branch" || return
+    git merge --ff-only FETCH_HEAD || return
+    echo "Switched to existing worktree for PR #$pr: $branch (../$dirname)"
+    return
+  fi
+
   git fetch "$remote" "$branch"
   git worktree add "../$dirname" "$branch"
   cd "../$dirname" || return
