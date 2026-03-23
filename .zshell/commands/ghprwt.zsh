@@ -9,10 +9,11 @@ function ghprwt() {
       fzf --height 25% --reverse |
       cut -f1 -d ' ') || return
   fi
-  local branch
+  local branch dirname
   branch=$(gh pr view "$pr" --json headRefName -q .headRefName) || return
+  dirname="pr-${pr}-${branch//\//_}"
   git fetch "$remote" "$branch"
-  git worktree add "../$branch" "$branch"
-  cd "../$branch" || return
-  echo "Switched to new worktree for PR #$pr: $branch"
+  git worktree add "../$dirname" "$branch"
+  cd "../$dirname" || return
+  echo "Switched to new worktree for PR #$pr: $branch (../$dirname)"
 }
