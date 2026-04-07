@@ -135,5 +135,5 @@ fi
 #
 
 if (( $+commands[gh] )); then
-	alias ghw='TERM=xterm-256color watch --color -n 60 --no-title '\''CLICOLOR_FORCE=1 gh pr status'\'''
+	alias ghw='TERM=xterm-256color watch --color -n 60 --no-title '\''CLICOLOR_FORCE=1 gh pr status --conflict-status'\'''
 fi
