@@ -1,9 +1,12 @@
 function __prompt_precmd {
+  local vcsh_prefix=""
+  [[ -n $VCSH_REPO_NAME ]] && vcsh_prefix="${VCSH_REPO_NAME}:"
+
   # Check for untracked files or updated submodules since vcs_info does not.
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-    branch_format="(${_prompt_colors[1]}%b%f%u%c${_prompt_colors[4]}●%f)"
+    branch_format="(${_prompt_colors[1]}${vcsh_prefix}%b%f%u%c${_prompt_colors[4]}●%f)"
   else
-    branch_format="(${_prompt_steeef_colors[1]}%b%f%u%c)"
+    branch_format="(${_prompt_steeef_colors[1]}${vcsh_prefix}%b%f%u%c)"
   fi
 
   zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
