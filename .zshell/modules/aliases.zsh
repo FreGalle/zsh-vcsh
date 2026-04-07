@@ -3,7 +3,7 @@
 #
 
 if (( $+commands[lsd] )); then
-  alias ls='lsd --group-directories-first --hyperlink=auto'
+  alias ls='lsd --group-directories-first --hyperlink=auto --git'
 fi
 
 alias la='ls -a'
