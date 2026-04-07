@@ -1,5 +1,5 @@
 # ghprwt - create a git worktree for a pull request
-# Usage: cpr <PR_NUMBER> [<REMOTE>]
+# Usage: ghprwt <PR_NUMBER> [<REMOTE>]
 function ghprwt() {
   local pr="$1"
   local remote="${2:-origin}"
@@ -9,20 +9,22 @@ function ghprwt() {
       fzf --height 25% --reverse |
       cut -f1 -d ' ') || return
   fi
-  local branch dirname
-  branch=$(gh pr view "$pr" --json headRefName -q .headRefName) || return
-  dirname="pr-${pr}-${branch//\//_}"
+  local branch base dirname pr_json
+  pr_json=$(gh pr view "$pr" --json headRefName,baseRefName) || return
+  branch=$(jq -r .headRefName <<< "$pr_json")
+  base=$(jq -r .baseRefName <<< "$pr_json")
+  dirname="pr-${pr}-${branch//(\/|_)/-}"
 
   if [[ -d "../$dirname" ]]; then
     cd "../$dirname" || return
-    git fetch "$remote" "$branch" || return
+    git fetch "$remote" "$branch" "$base" || return
     git switch "$branch" || return
     git merge --ff-only FETCH_HEAD || return
     echo "Switched to existing worktree for PR #$pr: $branch (../$dirname)"
     return
   fi
 
-  git fetch "$remote" "$branch"
+  git fetch "$remote" "$branch" "$base"
   git worktree add "../$dirname" "$branch"
   cd "../$dirname" || return
   echo "Switched to new worktree for PR #$pr: $branch (../$dirname)"
